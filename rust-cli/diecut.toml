@@ -24,3 +24,6 @@ computed = "{{ project_name | slugify }}"
 
 [files]
 exclude = [".DS_Store"]
+
+[hooks]
+post_create = "git init && git add -A"

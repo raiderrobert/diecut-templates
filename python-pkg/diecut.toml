@@ -28,3 +28,6 @@ computed = "{{ project_slug | replace(from='-', to='_') }}"
 
 [files]
 exclude = [".DS_Store"]
+
+[hooks]
+post_create = "git init && git add -A"
