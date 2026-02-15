@@ -1,0 +1,30 @@
+[template]
+name = "python-pkg"
+version = "0.1.0"
+description = "A minimal Python package with src layout"
+
+[variables.project_name]
+type = "string"
+prompt = "Project name"
+default = "my-project"
+
+[variables.author]
+type = "string"
+prompt = "Author name"
+
+[variables.license]
+type = "select"
+prompt = "License"
+choices = ["MIT", "Apache-2.0", "BSD-3-Clause"]
+default = "MIT"
+
+[variables.project_slug]
+type = "string"
+computed = "{{ project_name | slugify }}"
+
+[variables.python_package]
+type = "string"
+computed = "{{ project_slug | replace(from='-', to='_') }}"
+
+[files]
+exclude = [".DS_Store"]

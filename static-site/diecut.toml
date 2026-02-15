@@ -1,0 +1,20 @@
+[template]
+name = "static-site"
+version = "0.1.0"
+description = "A minimal static HTML site"
+
+[variables.project_name]
+type = "string"
+prompt = "Site name"
+default = "my-site"
+
+[variables.author]
+type = "string"
+prompt = "Author name"
+
+[variables.project_slug]
+type = "string"
+computed = "{{ project_name | slugify }}"
+
+[files]
+exclude = [".DS_Store"]
